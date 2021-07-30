@@ -5,9 +5,14 @@ services:
         build: https://github.com/IBM/MAX-Text-Summarizer.git
         restart: always
 
+    sentiment:
+        build: https://github.com/IBM/MAX-Text-Sentiment-Classifier.git
+        restart: always
+
     flask:
         depends_on: 
             - max
+            - sentiment
         build: ./flask
         volumes: 
             - ./flask:/app
