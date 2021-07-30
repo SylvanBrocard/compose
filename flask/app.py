@@ -36,9 +36,9 @@ def sentiment():
     # handle the POST request
     if request.method == 'POST':
         texte = request.form.to_dict(flat=False)
-        summary = requests.post("http://sentiment:5000/model/predict", json=texte)
-        summary = json.loads(summary.content.decode())
-        return '''<h1>Text positive sentiment : {}</h1>'''.format(summary['predictions'][0]['positive'])
+        sent = requests.post("http://sentiment:5000/model/predict", json=texte)
+        sent = json.loads(sent.content.decode())
+        return '''<h1>Text positive sentiment : {}</h1>'''.format(sent['predictions'][0]['positive'])
 
     # otherwise handle the GET request
     return '''
