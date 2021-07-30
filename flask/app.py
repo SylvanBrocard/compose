@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, render_template
 import requests
 import os
 import json
@@ -6,6 +6,16 @@ import json
 app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
+def index():
+    if request.method == 'GET':
+        pass
+
+    if request.method == 'POST':
+        pass
+
+    return render_template('index.html')
+
+@app.route('/form', methods=['GET', 'POST'])
 def form():
     # handle the POST request
     if request.method == 'POST':
