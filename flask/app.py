@@ -17,7 +17,7 @@ def form():
     # otherwise handle the GET request
     return '''
            <form method="POST">
-               <div><label>Your text to summarize is: <input type="text" name="text"></label></div>
+               <div><label>Your text to be summarized is: <input type="text" name="text"></label></div>
                <input type="submit" value="Submit">
            </form>'''
 
